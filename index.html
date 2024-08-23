@@ -67,8 +67,8 @@
         document.getElementById('submitButton').addEventListener('click', function() {
             const password = document.getElementById('passwordInput').value;
             if (password === 'Talha') {
-                // Redirect to the registration website
-                window.location.href = "https://drmlive.in/";
+                // Open the registration website in a new popup window
+                window.open("https://drmlive.in/", "RegistrationWindow", "width=800,height=600");
             } else {
                 alert('Incorrect password. Please try again.');
             }
