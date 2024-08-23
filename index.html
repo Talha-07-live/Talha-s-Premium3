@@ -64,10 +64,11 @@
         }
 
         .ticker-text {
-            display: inline-block;
+            display: inline-block; /* Initially show ticker2 */
             white-space: nowrap;
-            padding-left: 100%;
-            animation: ticker 30s linear infinite;
+            padding-left: 100%; /* Start off-screen */
+            animation: ticker-animation2 22s linear infinite; /* Adjusted animation duration for ticker speed */
+            color: white;
         }
 
         @keyframes ticker {
