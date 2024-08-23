@@ -30,6 +30,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             color: #fff;
+            position: relative;
         }
 
         #passwordInput {
@@ -54,21 +55,63 @@
         #submitButton:hover {
             background-color: #0056b3;
         }
+
+        /* Poster Styles */
+        .poster {
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ticker Styles */
+        .ticker-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            z-index: 1000;
+            padding: 5px 0;
+        }
+
+        .ticker-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: ticker 15s linear infinite;
+        }
+
+        @keyframes ticker {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Ticker Container -->
+    <div class="ticker-container">
+        <div class="ticker-text">𝕎𝕙𝕖𝕟 𝕐𝕠𝕦 𝕋𝕣𝕪 𝕋𝕠 𝔼𝕟𝕥𝕖𝕣 𝕋𝕙𝕖 ℙ𝕒𝕤𝕤𝕨𝕠𝕣𝕕 𝔸𝕟𝕕 𝕂𝕖𝕪𝕓𝕠𝕒𝕣𝕕 ℕ𝕠𝕥 𝕊𝕙𝕠𝕨 𝕋𝕙𝕖𝕟 ℂ𝕝𝕚𝕔𝕜 𝕋𝕙𝕖 𝕊𝕦𝕓𝕞𝕚𝕥 𝔹𝕦𝕥𝕥𝕠𝕟 𝔽𝕚𝕣𝕤𝕥 𝔸𝕟𝕕 𝕋𝕙𝕖𝕟 𝕋𝕣𝕪... 𝕀𝕗 𝕊𝕦𝕓𝕞𝕚𝕥 𝔹𝕦𝕥𝕥𝕠𝕟 ℕ𝕠𝕥 𝕎𝕠𝕣𝕜 𝕋𝕙𝕒𝕥'𝕤 𝕄𝕖𝕒𝕟 𝕋𝕙𝕚𝕤 ℙ𝕒𝕘𝕖 ℕ𝕠𝕥 𝔽𝕦𝕝𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 𝕐𝕖𝕥, ℙ𝕝𝕖𝕒𝕤𝕖 𝕎𝕒𝕚𝕥 𝔽𝕖𝕨 𝕊𝕖𝕔𝕠𝕟𝕕 𝔽𝕠𝕣 ℙ𝕒𝕘𝕖 𝔽𝕦𝕝𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕.
+    </div>
+
+    <!-- Password Container -->
     <div class="password-container">
         <h2>Enter Password</h2>
         <input type="password" id="passwordInput" placeholder="Enter password">
         <button id="submitButton">Submit</button>
+
+        <!-- Poster Image -->
+        <img src="https://s12.gifyu.com/images/SDoZ8.jpg" alt="Poster" class="poster">
     </div>
 
     <script>
         document.getElementById('submitButton').addEventListener('click', function() {
             const password = document.getElementById('passwordInput').value;
             if (password === 'Talha') {
-                // Open the registration website in a new popup window
-                window.open("https://drmlive.in/", "RegistrationWindow", "width=800,height=600");
+                // Redirect to the registration website
+                window.location.href = "https://drmlive.in/";
             } else {
                 alert('Incorrect password. Please try again.');
             }
