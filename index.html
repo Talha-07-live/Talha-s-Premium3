@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             background-color: #0000FF;
+            font-family: Arial, sans-serif;
         }
 
         .password-container {
@@ -28,33 +29,7 @@
             border: 1px solid #ccc;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-        }
-
-        .iframe-container {
-            display: none; /* Initially hidden */
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .iframe-container .poster {
-            position: absolute;
-            top: 0px; /* Adjust the top position */
-            left: -10px; /* Adjust the left position */
-            width: 450px; /* Adjust the width */
-            height: auto;
-            z-index: 1;
-            cursor: pointer;
+            color: #fff;
         }
 
         #passwordInput {
@@ -70,32 +45,30 @@
             font-size: 16px;
             width: 100%;
             cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #submitButton:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="password-container" id="passwordContainer">
+    <div class="password-container">
         <h2>Enter Password</h2>
         <input type="password" id="passwordInput" placeholder="Enter password">
         <button id="submitButton">Submit</button>
-    </div>
-
-    <div class="iframe-container" id="iframeContainer">
-        <iframe 
-            src="https://tv.durbinlive.pro/" 
-            scrolling="yes" 
-            allowfullscreen 
-            sandbox="allow-scripts allow-same-origin">
-        </iframe>
-        <img src="https://s12.gifyu.com/images/SDoZ8.jpg" alt="Poster" class="poster">
     </div>
 
     <script>
         document.getElementById('submitButton').addEventListener('click', function() {
             const password = document.getElementById('passwordInput').value;
             if (password === 'Talha') {
-                document.getElementById('passwordContainer').style.display = 'none';
-                document.getElementById('iframeContainer').style.display = 'block';
+                // Redirect to the registration website
+                window.location.href = "https://drmlive.in/";
             } else {
                 alert('Incorrect password. Please try again.');
             }
